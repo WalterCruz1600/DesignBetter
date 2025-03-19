@@ -114,3 +114,9 @@ CREATE TABLE transaccion_pago (
     nombre_cliente VARCHAR(100)
 );
 
+-- Índices recomendados para rendimiento
+CREATE INDEX idx_usuario_correo ON usuario(correo_electronico);
+CREATE INDEX idx_pedido_usuario ON pedido_personalizado(usuario_id);
+CREATE INDEX idx_pedido_estado ON pedido_personalizado(estado_pedido);
+CREATE INDEX idx_historial_pedido ON historial_estado(pedido_id);
+CREATE INDEX idx_mensaje_pedido ON mensaje_pedido(pedido_id);
