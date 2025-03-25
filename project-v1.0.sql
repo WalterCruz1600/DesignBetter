@@ -120,3 +120,16 @@ CREATE INDEX idx_pedido_usuario ON pedido_personalizado(usuario_id);
 CREATE INDEX idx_pedido_estado ON pedido_personalizado(estado_pedido);
 CREATE INDEX idx_historial_pedido ON historial_estado(pedido_id);
 CREATE INDEX idx_mensaje_pedido ON mensaje_pedido(pedido_id);
+
+
+-- Insertar datos de prueba
+-- Usuarios
+INSERT INTO usuario (nombre, correo_electronico, password_hash, rol) VALUES
+('Juan Pérez', 'juan@cliente.com', 'hash123', 'cliente'),
+('María García', 'maria@disenador.com', 'hash456', 'diseñador'),
+('Admin Sistema', 'admin@empresa.com', 'hash789', 'administrador');
+
+-- Perfiles de Medidas
+INSERT INTO perfil_medidas (usuario_id, nombre_perfil, altura, pecho, cintura, cadera) VALUES
+(1, 'Mi perfil principal', 1.75, 95.5, 80.0, 98.0),
+(2, 'Perfil diseñador', 1.68, 88.0, 72.5, 94.5);
