@@ -133,3 +133,42 @@ INSERT INTO usuario (nombre, correo_electronico, password_hash, rol) VALUES
 INSERT INTO perfil_medidas (usuario_id, nombre_perfil, altura, pecho, cintura, cadera) VALUES
 (1, 'Mi perfil principal', 1.75, 95.5, 80.0, 98.0),
 (2, 'Perfil diseñador', 1.68, 88.0, 72.5, 94.5);
+
+-- Plantillas de Prenda
+INSERT INTO plantilla_prenda (nombre, descripcion, tipo_ropa, tipo_cuerpo) VALUES
+('Camisa Slim Fit', 'Camisa formal ajustada', 'camisa', 'athletic'),
+('Vestido Verano', 'Vestido ligero para clima cálido', 'vestido', 'hourglass'),
+('Pantalón Skinny', 'Pantalón ajustado moderno', 'pantalon', 'slim');
+
+-- Materiales
+INSERT INTO material (nombre, descripcion) VALUES
+('Algodón Orgánico', 'Tejido 100% algodón certificado'),
+('Seda Natural', 'Seda premium de alta calidad'),
+('Poliéster Reciclado', 'Material ecológico reciclado');
+
+-- Relación Plantilla-Material
+INSERT INTO plantilla_material (plantilla_id, material_id) VALUES
+(1, 1), (1, 3),  -- Camisa Slim Fit usa Algodón y Poliéster
+(2, 2),           -- Vestido Verano usa Seda
+(3, 1), (3, 3);   -- Pantalón Skinny usa ambos materiales
+
+-- Pedidos Personalizados
+INSERT INTO pedido_personalizado (usuario_id, plantilla_id, material_id, color, ajustes, notas, estado_pedido) VALUES
+(1, 1, 1, 'azul marino', 'Ajustar mangas 2cm', 'Urgente para evento', 'produccion'),
+(1, 2, 2, 'blanco', 'Reducir escote 5cm', 'Regalo de cumpleaños', 'completado'),
+(2, 3, 3, 'negro', '', 'Pedido de muestra', 'pendiente');
+
+-- Visualizaciones 3D
+INSERT INTO visualizacion_3d (pedido_id, url_recurso, tiempo_generacion, estado_visualizacion) VALUES
+(1, 'https://storage.com/modelos/3d/camisa-azul', 45, 'generado'),
+(2, 'https://storage.com/modelos/3d/vestido-blanco', 38, 'generado'),
+(3, NULL, NULL, 'pendiente');
+
+-- Historial de Estados
+INSERT INTO historial_estado (pedido_id, estado, notas_adicionales) VALUES
+(1, 'pendiente', 'Pedido recibido'),
+(1, 'diseño', 'En proceso de diseño'),
+(1, 'produccion', 'En taller de confección'),
+(2, 'pendiente', 'Pedido recibido'),
+(2, 'completado', 'Entregado con éxito'),
+(3, 'pendiente', 'Esperando confirmación de materiales');
