@@ -3,6 +3,12 @@
 ## Descripción General
 Este documento describe la estructura de la base de datos diseñada para la tienda de ropa, incluyendo la definición de tablas, relaciones y restricciones clave.
 
+## Documentación - Historial Versiones
+
+El historial de versiones del documento adjunto se encuentra en el siguiente enlace:
+
+https://uvggt-my.sharepoint.com/:w:/g/personal/piv23574_uvg_edu_gt/EWtkRutOnO9Ouz51C8ldecQB1yIibMX0fIUvLK9rvnsYmA?e=sjwwy7
+
 ## Diseño de la Base de Datos
 La base de datos sigue un modelo relacional que permite gestionar usuarios, perfiles de medidas, plantillas de prendas, materiales, pedidos personalizados, visualizaciones 3D, historial de estados, mensajes y transacciones de pago.
 
