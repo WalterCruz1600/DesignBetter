@@ -125,9 +125,18 @@ CREATE INDEX idx_mensaje_pedido ON mensaje_pedido(pedido_id);
 -- Insertar datos de prueba
 -- Usuarios
 INSERT INTO usuario (nombre, correo_electronico, password_hash, rol) VALUES
-('Juan Pérez', 'juan@cliente.com', 'hash123', 'cliente'),
-('María García', 'maria@disenador.com', 'hash456', 'diseñador'),
-('Admin Sistema', 'admin@empresa.com', 'hash789', 'administrador');
+('Carlos Mendoza', 'carlos@cliente.com', 'hash101', 'cliente'),
+('Ana López', 'ana@cliente.com', 'hash202', 'cliente'),
+('Pedro Rojas', 'pedro@disenador.com', 'hash303', 'diseñador'),
+('Luisa Fernández', 'luisa@disenador.com', 'hash404', 'diseñador'),
+('Roberto Castro', 'roberto@cliente.com', 'hash505', 'cliente'),
+('Sofía Jiménez', 'sofia@cliente.com', 'hash606', 'cliente'),
+('Miguel Ángel Ruiz', 'miguel@disenador.com', 'hash707', 'diseñador'),
+('Laura Díaz', 'laura@cliente.com', 'hash808', 'cliente'),
+('Jorge Silva', 'jorge@cliente.com', 'hash909', 'cliente'),
+('Elena Morales', 'elena@disenador.com', 'hash110', 'diseñador'),
+('David Guzmán', 'david@cliente.com', 'hash121', 'cliente'),
+('Sistema Backoffice', 'backoffice@empresa.com', 'syshash1', 'administrador');
 
 -- Perfiles de Medidas
 INSERT INTO perfil_medidas (usuario_id, nombre_perfil, altura, pecho, cintura, cadera) VALUES
@@ -136,9 +145,21 @@ INSERT INTO perfil_medidas (usuario_id, nombre_perfil, altura, pecho, cintura, c
 
 -- Plantillas de Prenda
 INSERT INTO plantilla_prenda (nombre, descripcion, tipo_ropa, tipo_cuerpo) VALUES
-('Camisa Slim Fit', 'Camisa formal ajustada', 'camisa', 'athletic'),
-('Vestido Verano', 'Vestido ligero para clima cálido', 'vestido', 'hourglass'),
-('Pantalón Skinny', 'Pantalón ajustado moderno', 'pantalon', 'slim');
+('Blazer Clásico', 'Saco formal para oficina', 'saco', 'regular'),
+('Jeans Bootcut', 'Pantalón de mezclilla corte bootcut', 'pantalon', 'curvy'),
+('Top Deportivo', 'Top para entrenamiento de yoga', 'top', 'athletic'),
+('Chaqueta de Cuero', 'Chaqueta estilo motociclista', 'chaqueta', 'slim'),
+('Falda Circular', 'Falda amplia con vuelo', 'falda', 'hourglass'),
+('Traje de Baño Enterizo', 'Bañador deportivo', 'traje_baño', 'athletic'),
+('Sudadera Oversize', 'Buzo holgado con capucha', 'buzo', 'oversize'),
+('Shorts de Lino', 'Shorts veraniegos transpirables', 'shorts', 'regular'),
+('Abrigo Invierno', 'Abrigo largo para clima frío', 'abrigo', 'regular'),
+('Vestido Cocktail', 'Vestido elegante para fiestas', 'vestido', 'hourglass'),
+('Camiseta Básica', 'Corte clásico unisex', 'camiseta', 'regular'),
+('Pantalón Culotte', 'Pantalón ancho a media pierna', 'pantalon', 'curvy'),
+('Chaleco Acolchado', 'Chaleco sin mangas térmico', 'chaleco', 'regular'),
+('Bata Hogar', 'Bata cómoda para el hogar', 'bata', 'oversize'),
+('Uniforme Ejecutivo', 'Conjunto formal para oficina', 'conjunto', 'regular');
 
 -- Materiales
 INSERT INTO material (nombre, descripcion) VALUES
@@ -154,9 +175,26 @@ INSERT INTO plantilla_material (plantilla_id, material_id) VALUES
 
 -- Pedidos Personalizados
 INSERT INTO pedido_personalizado (usuario_id, plantilla_id, material_id, color, ajustes, notas, estado_pedido) VALUES
-(1, 1, 1, 'azul marino', 'Ajustar mangas 2cm', 'Urgente para evento', 'produccion'),
-(1, 2, 2, 'blanco', 'Reducir escote 5cm', 'Regalo de cumpleaños', 'completado'),
-(2, 3, 3, 'negro', '', 'Pedido de muestra', 'pendiente');
+(1, 3, 1, 'negro', 'Ajustar tirantes', 'Para gimnasio', 'completado'),
+(2, 5, 2, 'rojo', 'Añadir bolsillo oculto', 'Regalo aniversario', 'entrega'),
+(3, 1, 3, 'azul marino', 'Forrar interior', 'Pedido corporativo', 'produccion'),
+(4, 7, 1, 'gris', 'Capucha desmontable', 'Uso diario', 'diseño'),
+(5, 9, 2, 'beige', 'Alargar 5cm', 'Para viaje a Canadá', 'pendiente'),
+(6, 2, 3, 'azul claro', 'Ajustar cintura', 'Primer pedido', 'completado'),
+(7, 4, 1, 'negro', 'Refuerzo en codos', 'Estilo punk', 'produccion'),
+(8, 6, 2, 'azul eléctrico', 'Corte deportivo', 'Para competencia', 'entrega'),
+(9, 8, 3, 'blanco', 'Bolsillos laterales', 'Vacaciones en playa', 'diseño'),
+(10, 10, 1, 'vino tinto', 'Escote en V', 'Fiesta de gala', 'pendiente'),
+(1, 11, 2, 'blanco', 'Estampado personalizado', 'Publicidad para negocio', 'produccion'),
+(2, 12, 3, 'verde oliva', 'Cintura elástica', 'Uso laboral', 'completado'),
+(3, 13, 1, 'plata', 'Relleno extra', 'Para invierno extremo', 'entrega'),
+(4, 14, 2, 'rosa palo', 'Bordado iniciales', 'Regalo para mamá', 'diseño'),
+(5, 15, 3, 'gris oscuro', 'Chaleco + pantalón', 'Ascenso laboral', 'pendiente'),
+(6, 1, 1, 'carbón', 'Solo una solapa', 'Reunión importante', 'produccion'),
+(7, 3, 2, 'morado', 'Tirantes más anchos', 'Colección personal', 'completado'),
+(8, 5, 3, 'amarillo', 'Menos vuelo', 'Evento de verano', 'entrega'),
+(9, 7, 1, 'negro', 'Sin capucha', 'Estilo minimalista', 'diseño'),
+(10, 9, 2, 'camel', 'Botones ocultos', 'Invierno en Europa', 'pendiente');
 
 -- Visualizaciones 3D
 INSERT INTO visualizacion_3d (pedido_id, url_recurso, tiempo_generacion, estado_visualizacion) VALUES
