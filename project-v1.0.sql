@@ -172,3 +172,24 @@ INSERT INTO historial_estado (pedido_id, estado, notas_adicionales) VALUES
 (2, 'pendiente', 'Pedido recibido'),
 (2, 'completado', 'Entregado con éxito'),
 (3, 'pendiente', 'Esperando confirmación de materiales');
+
+-- Mensajes sobre Pedidos
+INSERT INTO mensaje_pedido (pedido_id, usuario_id, mensaje) VALUES
+(1, 1, '¿Podrían acelerar el proceso? Necesito la camisa para el viernes.'),
+(1, 2, 'Estamos optimizando la producción, le confirmamos para mañana.'),
+(2, 1, '¡El vestido llegó perfecto! Muchas gracias.');
+
+-- Archivos Adjuntos
+INSERT INTO archivo_adjunto (mensaje_id, url_archivo, tipo_archivo) VALUES
+(1, 'https://storage.com/adjuntos/ref-camisa.pdf', 'PDF'),
+(3, 'https://storage.com/adjuntos/foto-entrega.jpg', 'Imagen');
+
+-- Valoraciones de Pedidos
+INSERT INTO valoracion_pedido (pedido_id, calificacion, comentario) VALUES
+(2, 5, 'Excelente calidad y atención, superó mis expectativas!');
+
+-- Transacciones de Pago
+INSERT INTO transaccion_pago (pedido_id, monto, metodo_pago, numero_autorizacion, nit, nombre_cliente) VALUES
+(1, 89.99, 'Tarjeta Crédito', 'AUTH-12345', '123456789', 'Juan Pérez'),
+(2, 150.50, 'PayPal', 'PP-67890', NULL, 'Juan Pérez'),
+(3, 75.00, 'Transferencia', 'BANK-3344', '987654321', 'María García');
